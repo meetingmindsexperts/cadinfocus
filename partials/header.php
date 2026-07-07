@@ -12,17 +12,6 @@ $home = $page === 'home' ? '' : '/';
 // Absolute URL of the current page for canonical / social tags.
 $canonical = SITE_URL . ($page === 'home' ? '/' : '/register');
 $ogImage   = SITE_URL . '/assets/og-image.jpg';
-
-// Small inline brand mark: a crystalline "in focus" target (navy ring + red arc).
-function brand_mark(string $class = 'h-9 w-9'): string
-{
-    return '<svg class="' . e($class) . '" viewBox="0 0 48 48" fill="none" aria-hidden="true">'
-        . '<circle cx="24" cy="24" r="16" stroke="#12266b" stroke-width="2.2"/>'
-        . '<circle cx="24" cy="24" r="10" stroke="#12266b" stroke-width="1.8"/>'
-        . '<path d="M24 8 A16 16 0 0 1 40 24" stroke="#dc2626" stroke-width="2.6" stroke-linecap="round"/>'
-        . '<circle cx="24" cy="24" r="3.4" fill="#12266b"/>'
-        . '</svg>';
-}
 ?>
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
@@ -150,11 +139,8 @@ function brand_mark(string $class = 'h-9 w-9'): string
 
 <header class="sticky top-0 z-40 w-full border-b border-navy-700/10 bg-white/90 backdrop-blur">
     <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8" aria-label="Primary">
-        <a href="<?= $home ?: '#top' ?>" class="flex items-center gap-2.5" aria-label="Cold Agglutinin Disease in Focus, home">
-            <?= brand_mark('h-8 w-8 sm:h-9 sm:w-9') ?>
-            <span class="font-head text-[15px] font-extrabold leading-none tracking-tight text-navy-900 sm:text-lg">
-                <span class="hidden sm:inline">Cold Agglutinin Disease </span><span class="sm:hidden">CAD </span><span class="text-red">in Focus</span>
-            </span>
+        <a href="<?= $home ?: '#top' ?>" class="flex items-center" aria-label="Cold Agglutinin Disease in Focus, home">
+            <img src="/assets/logo-cad-title.png" alt="Cold Agglutinin Disease in Focus" class="h-9 w-auto sm:h-11">
         </a>
 
         <div class="hidden items-center gap-8 text-base font-semibold text-navy-800 lg:flex">

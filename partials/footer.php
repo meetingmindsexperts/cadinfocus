@@ -2,10 +2,9 @@
     <div class="mx-auto max-w-7xl px-5 lg:px-8">
         <div class="grid gap-10 md:grid-cols-3">
             <div>
-                <p class="font-head text-xl font-extrabold leading-tight text-white">
-                    Cold Agglutinin Disease <span class="text-red">in Focus</span>
-                </p>
-                <p class="mt-2 text-sm font-semibold text-ice">From Diagnosis to Evolving Management Strategies</p>
+                <span class="inline-flex items-center rounded-2xl bg-white px-5 py-4 shadow-sm">
+                    <img src="/assets/logo-cad.png" alt="Cold Agglutinin Disease in Focus, From Diagnosis to Evolving Management Strategies" class="h-20 w-auto">
+                </span>
                 <p class="mt-5 max-w-xs text-sm leading-relaxed text-white/60">
                     A CME accredited virtual webinar on the burden, diagnosis and evolving management of Cold Agglutinin Disease. <?= e($event['date']) ?>, <?= e($event['format']) ?>.
                 </p>
