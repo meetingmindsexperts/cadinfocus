@@ -47,6 +47,7 @@ $ogImage   = SITE_URL . '/assets/og-image.jpg';
     <meta name="twitter:title" content="<?= e($pageTitle) ?>">
     <meta name="twitter:description" content="<?= e($pageDesc) ?>">
     <meta name="twitter:image" content="<?= e($ogImage) ?>">
+    <meta name="twitter:image:alt" content="Cold Agglutinin Disease in Focus, 20 July 2026, Virtual, CME accredited">
 
     <!-- Event structured data -->
     <script type="application/ld+json">
