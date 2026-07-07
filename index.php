@@ -141,10 +141,12 @@ require __DIR__ . '/partials/header.php';
         $moderator = $faculty[0];
         $speakers  = array_slice($faculty, 1);
 
-        // Reusable avatar (photo, or initials fallback).
+        // Reusable avatar. The supplied photos already carry a decorative ring,
+        // so no ring is added to the <img> (avoids a double ring); the white
+        // corners blend into the white card. The initials fallback keeps a ring.
         $avatar = function (array $p, string $size) {
             if (!empty($p['img'])) {
-                return '<img src="' . e($p['img']) . '" alt="' . e($p['name']) . '" loading="lazy" class="' . $size . ' flex-none rounded-full object-cover ring-4 ring-brand/25 shadow-md">';
+                return '<img src="' . e($p['img']) . '" alt="' . e($p['name']) . '" loading="lazy" class="' . $size . ' flex-none rounded-full object-cover shadow-md">';
             }
             return '<div class="' . $size . ' grid flex-none place-items-center rounded-full bg-gradient-to-br from-navy-700 to-brand text-2xl font-extrabold text-white ring-4 ring-brand/25 shadow-md" aria-hidden="true">' . e($p['initials']) . '</div>';
         };
