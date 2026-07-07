@@ -1,0 +1,17 @@
+# Clean URLs: serve register.php as /register, hide .php extensions.
+# Rename to .htaccess at the site root (Apache / cPanel / HostGator).
+Options -MultiViews
+RewriteEngine On
+
+# 301 any request for /index.php to the site root.
+RewriteCond %{THE_REQUEST} \s/+index\.php[\s?] [NC]
+RewriteRule ^ / [R=301,L]
+
+# 301 any other *.php request to its clean (extensionless) URL.
+RewriteCond %{THE_REQUEST} \s/+([^\s?]+)\.php[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Internally rewrite a clean URL to its .php file when one exists.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]

@@ -1,0 +1,18 @@
+# OS
+.DS_Store
+
+# Runtime registration data (not source)
+/data/
+
+# Editor / screenshot scratch
+.playwright-mcp/
+cad-*.jpeg
+*.tmp
+
+# Raw design source (kept locally, not shipped, not in repo)
+Content - CAD 1.pptx
+Artboard 170.jpg
+Background.jpg
+Attendee Console Background-1600x900 0.jpg
+صثلاسهفث مخلخ0.jpg
+Speaker/
