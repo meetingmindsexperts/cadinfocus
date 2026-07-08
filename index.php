@@ -212,7 +212,7 @@ require __DIR__ . '/partials/header.php';
                         <?= $i + 1 ?>
                     </span>
                     <div class="rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-ice/40 group-hover:bg-white/[0.09] sm:flex sm:items-start sm:gap-5">
-                        <span class="agenda-time inline-flex w-fit flex-none items-center rounded-lg px-3.5 py-1.5 text-sm font-bold text-white shadow-md shadow-brand/20 sm:w-[128px] sm:justify-center">
+                        <span class="agenda-time inline-flex w-fit flex-none items-center justify-center whitespace-nowrap rounded-lg px-3.5 py-1.5 text-sm font-bold text-white shadow-md shadow-brand/20 sm:min-w-[136px]">
                             <?= e($time) ?>
                         </span>
                         <div class="mt-3 sm:mt-0">
