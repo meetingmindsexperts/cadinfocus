@@ -130,7 +130,7 @@ require __DIR__ . '/partials/header.php';
                 <div class="text-center">
                     <p class="text-xs font-bold uppercase tracking-[0.2em] text-navy-700/50"><?= e($partner['label']) ?></p>
                     <div class="mt-4 flex h-20 items-center justify-center">
-                        <img src="<?= e($partner['img']) ?>" alt="<?= e($partner['alt']) ?>" class="max-h-14 w-auto object-contain">
+                        <img src="<?= e($partner['img']) ?>" alt="<?= e($partner['alt']) ?>" class="<?= e($partner['h'] ?? 'max-h-14') ?> w-auto object-contain">
                     </div>
                 </div>
             <?php endforeach; ?>
