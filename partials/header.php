@@ -151,9 +151,56 @@ $ogImage   = SITE_URL . '/assets/og-image.jpg';
             <a href="<?= $home ?>#partners" class="transition-colors hover:text-brand">Partners</a>
         </div>
 
-        <a href="<?= REGISTER_URL ?>"
-           class="inline-flex items-center whitespace-nowrap rounded-full bg-gradient-to-r from-red to-red-dark px-4 py-2 text-sm font-bold text-white shadow-lg shadow-red/20 transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red sm:px-5 sm:py-2.5">
-            Register Now
-        </a>
+        <div class="flex items-center gap-2">
+            <a href="<?= REGISTER_URL ?>"
+               class="inline-flex items-center whitespace-nowrap rounded-full bg-gradient-to-r from-red to-red-dark px-4 py-2 text-sm font-bold text-white shadow-lg shadow-red/20 transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red sm:px-5 sm:py-2.5">
+                Register Now
+            </a>
+
+            <!-- Mobile menu toggle -->
+            <button type="button" id="nav-toggle"
+                    class="grid h-10 w-10 place-items-center rounded-lg text-navy-800 transition-colors hover:bg-navy-700/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand lg:hidden"
+                    aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+                <svg class="nav-open h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/></svg>
+                <svg class="nav-close hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
     </nav>
+
+    <!-- Mobile menu panel -->
+    <div id="mobile-menu" class="hidden border-t border-navy-700/10 bg-white lg:hidden">
+        <nav class="mx-auto flex max-w-7xl flex-col px-5 py-3 text-base font-semibold text-navy-800" aria-label="Mobile">
+            <a href="<?= $home ?>#about" class="rounded-lg px-3 py-3 transition-colors hover:bg-navy-700/5 hover:text-brand">About</a>
+            <a href="<?= $home ?>#faculty" class="rounded-lg px-3 py-3 transition-colors hover:bg-navy-700/5 hover:text-brand">Faculty</a>
+            <a href="<?= $home ?>#agenda" class="rounded-lg px-3 py-3 transition-colors hover:bg-navy-700/5 hover:text-brand">Agenda</a>
+            <a href="<?= $home ?>#partners" class="rounded-lg px-3 py-3 transition-colors hover:bg-navy-700/5 hover:text-brand">Partners</a>
+            <a href="<?= REGISTER_URL ?>" class="mt-2 rounded-lg bg-gradient-to-r from-red to-red-dark px-3 py-3 text-center font-bold text-white">Register Now</a>
+        </nav>
+    </div>
+
+    <script>
+        (function () {
+            var btn = document.getElementById('nav-toggle');
+            var menu = document.getElementById('mobile-menu');
+            if (!btn || !menu) return;
+            var openI = btn.querySelector('.nav-open'), closeI = btn.querySelector('.nav-close');
+            function setOpen(open) {
+                menu.classList.toggle('hidden', !open);
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+                if (openI) openI.classList.toggle('hidden', open);
+                if (closeI) closeI.classList.toggle('hidden', !open);
+            }
+            btn.addEventListener('click', function () {
+                setOpen(menu.classList.contains('hidden'));
+            });
+            // Close when a link is tapped or on resize to desktop.
+            menu.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () { setOpen(false); });
+            });
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 1024) setOpen(false);
+            });
+        })();
+    </script>
 </header>
