@@ -141,7 +141,7 @@ $ogImage   = SITE_URL . '/assets/og-image.jpg';
 <header class="sticky top-0 z-40 w-full border-b border-navy-700/10 bg-white/90 backdrop-blur">
     <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8" aria-label="Primary">
         <a href="<?= $home ?: '#top' ?>" class="flex items-center" aria-label="Cold Agglutinin Disease in Focus, home">
-            <img src="/assets/logo-cad.png" alt="Cold Agglutinin Disease in Focus, From Diagnosis to Evolving Management Strategies" class="h-12 w-auto sm:h-14">
+            <img src="/assets/logo-cad.png" alt="Cold Agglutinin Disease in Focus, From Diagnosis to Evolving Management Strategies" class="h-auto w-[168px] sm:w-[189px]">
         </a>
 
         <div class="hidden items-center gap-8 text-base font-semibold text-navy-800 lg:flex">
