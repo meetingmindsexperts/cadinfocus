@@ -159,6 +159,6 @@ $agenda = [
 // Logos live in assets/logos/. Labels read off the brief.
 $partners = [
     ['label' => 'Endorsed by',  'img' => 'assets/logos/esh.png',       'alt' => 'Emirates Society of Haematology'],
-    ['label' => 'Supported by', 'img' => 'assets/logos/recordati.png', 'alt' => 'Recordati'],
+    ['label' => 'Supported by', 'img' => 'assets/logos/recordati2.png', 'alt' => 'Recordati Rare Diseases'],
     ['label' => 'Managed by',   'img' => 'assets/logos/mme.png',       'alt' => 'Meeting Minds Experts'],
 ];
