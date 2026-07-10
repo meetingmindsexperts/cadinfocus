@@ -133,7 +133,7 @@ $faculty = [
         'role'     => 'Speaker',
         'name'     => 'Dr. Mohammad M Alawadhy',
         'initials' => 'MA',
-        'img'      => 'assets/faculty/alawadhy.jpg',
+        // No photo by the speaker's own request; renders the initials avatar.
         'lines'    => [
             'Clinical Hematologist',
             'Senior Specialist, Adult Hematology and Thrombosis',
